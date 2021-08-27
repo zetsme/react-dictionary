@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import ThemeSwitch from './components/ThemeSwitch';
+import Dictionary from './context/Dictionary';
+import Header from './components/Header';
+import Definitions from './components/Definitions';
+import { Container } from '@material-ui/core';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeSwitch />
+      <Dictionary>
+        <Container maxWidth='sm' style={{ paddingTop: '4rem' }}>
+          <Header />
+          <Definitions />
+        </Container>
+      </Dictionary>
+    </>
   );
-}
+};
 
 export default App;
